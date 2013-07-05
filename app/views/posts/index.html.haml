@@ -5,10 +5,13 @@
 /   	%h2= t
 / lesson 17 of http://learn.themakersquare.com/pages/rails/practicing-building-a-new-rails-app
  
+/ - @posts.each do |entry|
+/ 		%h2= entry.title
+/ lesson 22 of http://learn.themakersquare.com/pages/rails/practicing-building-a-new-rails-app
 
 - @posts.each do |entry|
-	%h2= entry.title
-	%p= entry.body
+		%h2=link_to entry.title, entry
+
 
 
 
