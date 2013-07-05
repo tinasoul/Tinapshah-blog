@@ -1,4 +1,7 @@
 TinapshahBlog::Application.routes.draw do
+
+  get '/posts' => 'posts#index'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
