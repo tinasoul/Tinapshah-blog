@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 		@name = "Tina"
 		# @post_titles = ["Why code", "What I learned in 3 weeks"]
 		# lesson 17 of http://learn.themakersquare.com/pages/rails/practicing-building-a-new-rails-app
-		@posts = Post.all
+		@posts = Post.all.sort_by{|p| p[:title]}
 	end
 
 	def show
@@ -20,6 +20,7 @@ class PostsController < ApplicationController
 		if @post.save
 			redirect_to @post
 		else
+			flash[:notice] = "Enter a title and body."
 			render action: 'new'
 		end    
 	end

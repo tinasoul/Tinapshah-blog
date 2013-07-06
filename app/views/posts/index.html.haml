@@ -13,6 +13,9 @@
 			=link_to "Delete", entry, :method => :delete, :data => {confirm: 'you sure?'}
 		%br
 
+	- if flash[:notice].present?
+		%p= flash[:notice]
+
 
 
 
