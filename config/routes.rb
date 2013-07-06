@@ -1,17 +1,24 @@
 TinapshahBlog::Application.routes.draw do
 
-  get '/posts' => 'posts#index'
-  get '/post/:id' => 'posts#show', as: 'post'
-  
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
+  # get '/posts' => 'posts#index', as: 'posts'
+  # get '/post/:id' => 'posts#show', as: 'post'
+  # get '/posts/new' => 'posts#new', as: 'new_post'
+  # post '/posts' => 'posts#create'
+  # get '/posts/:id/edit' => 'posts#edit', as: 'edit_post'
+  # put '/post/:id' => 'posts#update'
+  # delete '/posts/:id' => 'posts#destroy'
+  resources :posts
 
-  # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
-  # Keep in mind you can assign values other than :controller and :action
+
+  # The priority is based upon order of creation:
+  # first created - highest priority.
+
+  #  Sample of regular route:
+  #  match 'products/:id' => 'catalog#view'
+  #  Keep in mind you can assign values other than :controller and :actio
 
   # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
+  # match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):

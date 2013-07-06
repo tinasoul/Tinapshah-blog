@@ -1,16 +1,17 @@
-%h1= "#{@name}'s Blog"
-%br
-
-/ - @post_titles.each do |t|
-/   	%h2= t
-/ lesson 17 of http://learn.themakersquare.com/pages/rails/practicing-building-a-new-rails-app
- 
-/ - @posts.each do |entry|
-/ 		%h2= entry.title
-/ lesson 22 of http://learn.themakersquare.com/pages/rails/practicing-building-a-new-rails-app
-
-- @posts.each do |entry|
-		%h2=link_to entry.title, entry
+%body
+	%h1 #{@name}'s Blog
+	%p
+	%br
+	%br
+	= link_to "New Post", new_post_path
+	- @posts.each do |entry|
+		%h3
+			=link_to "#{entry.title}",post_path(entry)
+		%p	
+			=link_to "Edit", edit_post_path(entry)
+			|
+			=link_to "Delete", entry, :method => :delete, :data => {confirm: 'you sure?'}
+		%br
 
 
 
