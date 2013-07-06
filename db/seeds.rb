@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+i=1
+Post.destroy_all
+10.times do 
+	@post = Post.create(title: "Post #{i}", author: "Tina", body: "This is the body text for post number #{i}")
+	i+=1
+end
